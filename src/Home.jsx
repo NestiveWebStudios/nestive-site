@@ -31,7 +31,7 @@ const Home = () => {
       </a>
       <br />
       <img
-        src="/nestive-logo-transparent.png"
+        src="/nestive-transparent-logo-.png"
         alt="Nestive Logo"
         style={{ marginTop: '40px', maxWidth: '200px' }}
       />
