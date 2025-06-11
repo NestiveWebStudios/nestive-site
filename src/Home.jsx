@@ -3,6 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div style={{
+      backgroundColor: '#ede9fe',
       padding: '60px 20px',
       fontFamily: 'Arial, sans-serif',
       display: 'flex',
