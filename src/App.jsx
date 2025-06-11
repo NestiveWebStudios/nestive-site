@@ -7,11 +7,24 @@ import UpgradeDetails from './UpgradeDetails';
 const App = () => {
   return (
     <Router>
-      <nav style={{ padding: '20px', backgroundColor: '#000' }}>
-        <Link to="/" style={{ color: 'white', marginRight: '20px' }}>Home</Link>
-        <Link to="/upgrade" style={{ color: 'white', marginRight: '20px' }}>Upgrade</Link>
-        <a href="mailto:support@nestiveweb.com" style={{ color: 'white' }}>Contact</a>
-      </nav>
+     <nav style={{ 
+  padding: '20px', 
+  backgroundColor: '#000', 
+  display: 'flex', 
+  justifyContent: 'space-between', 
+  alignItems: 'center' 
+   }}>
+  <div>
+    <Link to="/" style={{ color: 'white', marginRight: '20px' }}>Home</Link>
+    <Link to="/upgrade" style={{ color: 'white', marginRight: '20px' }}>Upgrade</Link>
+    <Link to="/contact" style={{ color: 'white' }}>Contact</Link>
+  </div>
+  <img 
+    src="/favicon.png" 
+    alt="Nestive Icon" 
+    style={{ height: '24px', width: '24px' }} 
+  />
+</nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
