@@ -26,5 +26,5 @@ const Upgrade = () => {
   );
 };
 
-export default Upgrade;
+
 export default Upgrade;
