@@ -22,7 +22,7 @@ const App = () => {
           <img
             src="/favicon.png"
             alt="Nestive Logo"
-            style={{ width: '128px', height: '128px', marginRight: '10px' }}
+            style={{ width: '108px', height: '108px', marginRight: '10px' }}
           />
         </Link>
 
