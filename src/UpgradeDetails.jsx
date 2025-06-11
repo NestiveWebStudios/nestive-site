@@ -27,7 +27,7 @@ const UpgradeDetails = () => {
   };
 
   const handleCheckout = () => {
-    // Replace with actual Stripe link or checkout handler
+    // Replace with your real Stripe checkout link
     window.location.href = 'https://your-stripe-checkout-link.com';
   };
 
@@ -35,9 +35,8 @@ const UpgradeDetails = () => {
     <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
       <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>Like What You See?</h1>
       <p style={{ fontSize: '18px', marginBottom: '30px' }}>
-        Launch your full website today for just <strong>$99</strong>. No domain needed — we’ll host it for you under our Nestive Web Studios platform.  
-        Want to use your own domain? Add it later or connect one anytime. 
-        Your site is fully managed by us, with edits and updates submitted directly to our team.
+        Launch your full website today for just <strong>$99</strong>. No domain needed — we’ll host it for you under our Nestive Web Studios platform. 
+        Want to use your own domain? Add it later or connect one anytime. Your site is fully managed by us, with edits and updates submitted directly to our team.
       </p>
 
       <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Optional Add-Ons:</h2>
@@ -83,21 +82,18 @@ const UpgradeDetails = () => {
         boxShadow: '0 -2px 5px rgba(0,0,0,0.1)',
         zIndex: '1000'
       }}>
-        <strong>Total: ${( (prices.base + getTotal()) / 100 ).toFixed(2)}</strong>
-        <br />
         <button
           style={{
             backgroundColor: '#000',
             color: '#fff',
             padding: '12px 24px',
             border: 'none',
-            marginTop: '10px',
             cursor: 'pointer',
             fontSize: '16px'
           }}
           onClick={handleCheckout}
         >
-          Launch Your Site – $99
+          Launch Your Site – ${( (prices.base + getTotal()) / 100 ).toFixed(2)}
         </button>
       </div>
     </div>
