@@ -7,13 +7,15 @@ import UpgradeDetails from './UpgradeDetails';
 const App = () => {
   return (
     <Router>
-      <nav style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '15px 30px',
-        backgroundColor: '#000',
-      }}>
+      <div style={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '0 20px',
+  backgroundColor: 'black',
+  height: '80px', // 👈 THIS keeps it from stretching
+  overflow: 'hidden'
+}}>
         {/* Logo on the left */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img
