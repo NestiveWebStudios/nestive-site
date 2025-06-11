@@ -1,73 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const UpgradeDetails = () => {
-  const [addons, setAddons] = useState({
-    copywriting: false,
-    analytics: false,
-    extraPage: false,
-  });
-
-  const prices = {
-    base: 9900, // $99.00
-    copywriting: 2500,
-    analytics: 1000,
-    extraPage: 1500,
-  };
-
-  const getTotal = () => {
-    let total = 0;
-    Object.keys(addons).forEach(key => {
-      if (addons[key]) total += prices[key];
-    });
-    return total;
-  };
-
-  const handleChange = (addon) => {
-    setAddons(prev => ({ ...prev, [addon]: !prev[addon] }));
-  };
-
   const handleCheckout = () => {
-    // Replace with your real Stripe checkout link
+    // Replace this with your actual Stripe link when ready
     window.location.href = 'https://your-stripe-checkout-link.com';
   };
 
   return (
     <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>Like What You See?</h1>
+      <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>Let’s Do This.</h1>
+
       <p style={{ fontSize: '18px', marginBottom: '30px' }}>
-        Launch your full website today for just <strong>$99</strong>. No domain needed — we’ll host it for you under our Nestive Web Studios platform. 
-        Want to use your own domain? Add it later or connect one anytime. Your site is fully managed by us, with edits and updates submitted directly to our team.
+        Get your full website live today for just <strong>$99</strong>. No domain needed — we’ll host it for you under Nestive Web Studios.  
+        Want your own domain? You can add or connect one later. Your site is fully built, hosted, and managed by our team.  
+        Edits and updates? Just shoot us an email and we’ll take care of it.
       </p>
-
-      <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Optional Add-Ons:</h2>
-      <div style={{ marginBottom: '80px' }}>
-        <label style={{ display: 'block', marginBottom: '10px' }}>
-          <input
-            type="checkbox"
-            checked={addons.copywriting}
-            onChange={() => handleChange('copywriting')}
-          />
-          <span style={{ marginLeft: '10px' }}>📄 Professional Copywriting – $25</span>
-        </label>
-
-        <label style={{ display: 'block', marginBottom: '10px' }}>
-          <input
-            type="checkbox"
-            checked={addons.analytics}
-            onChange={() => handleChange('analytics')}
-          />
-          <span style={{ marginLeft: '10px' }}>📊 Analytics & Visitor Tracking – $10</span>
-        </label>
-
-        <label style={{ display: 'block', marginBottom: '10px' }}>
-          <input
-            type="checkbox"
-            checked={addons.extraPage}
-            onChange={() => handleChange('extraPage')}
-          />
-          <span style={{ marginLeft: '10px' }}>📄 Extra Page (e.g. Contact/About) – $15</span>
-        </label>
-      </div>
 
       {/* Sticky Checkout Bar */}
       <div style={{
@@ -93,7 +40,7 @@ const UpgradeDetails = () => {
           }}
           onClick={handleCheckout}
         >
-          Launch Your Site – ${( (prices.base + getTotal()) / 100 ).toFixed(2)}
+          Launch Your Site – $99
         </button>
       </div>
     </div>
