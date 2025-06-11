@@ -3,6 +3,8 @@ import React from 'react';
 const Home = () => {
   return (
     <div style={{
+      width: '100%',
+      height: '100vh',
       backgroundColor: '#ede9fe',
       padding: '60px 20px',
       fontFamily: 'Arial, sans-serif',
