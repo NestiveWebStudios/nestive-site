@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', backgroundColor: '#222', color: '#fff', minHeight: '100vh' }}>
       <h1 style={{ fontSize: '36px', marginBottom: '20px' }}>
         Welcome to Nestive Web Studios
       </h1>
