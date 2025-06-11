@@ -2,11 +2,15 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div style={{ padding: '40px' }}>
-      <h1>Welcome to Nestive Web Studios</h1>
-      <p>Your dream site starts here — fast, simple, no stress.</p>
-      <p>
-        We build clean, modern websites for creators and small businesses.
+    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif' }}>
+      <h1 style={{ fontSize: '36px', marginBottom: '20px' }}>
+        Welcome to Nestive Web Studios
+      </h1>
+      <p style={{ fontSize: '18px', marginBottom: '10px' }}>
+        Your dream site starts here — fast, simple, no stress.
+      </p>
+      <p style={{ fontSize: '16px', marginBottom: '20px' }}>
+        We build clean, modern websites for creators and small businesses.  
         No templates. No fluff. Just real design that works.
       </p>
       <img
