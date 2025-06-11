@@ -17,7 +17,9 @@ const App = () => {
   <div>
     <Link to="/" style={{ color: 'white', marginRight: '20px' }}>Home</Link>
     <Link to="/upgrade" style={{ color: 'white', marginRight: '20px' }}>Upgrade</Link>
-    <Link to="/contact" style={{ color: 'white' }}>Contact</Link>
+    <a href="mailto:support@nestiveweb.com" style={{ color: 'white', textDecoration: 'none' }}>
+  Contact
+</a>
   </div>
   <img 
     src="/favicon.png" 
