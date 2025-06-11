@@ -22,7 +22,7 @@ const App = () => {
           <img
             src="/nestive-transparent-logo.png"
             alt="Nestive Logo"
-            style={{ width: '50vw', height: '75%', marginRight: '10px' }}
+            style={{ height: '100%', width: 'auto', maxHeight: '80px', marginRight: '10px' }}
           />
         </Link>
 
