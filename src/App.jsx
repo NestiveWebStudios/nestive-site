@@ -20,9 +20,9 @@ const App = () => {
         {/* Logo on the left */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src="/favicon.png"
+            src="/nestive-transparent-logo.png"
             alt="Nestive Logo"
-            style={{ width: '108px', height: '108px', marginRight: '10px' }}
+            style={{ width: 'auto', height: 'auto', marginRight: '10px' }}
           />
         </Link>
 
