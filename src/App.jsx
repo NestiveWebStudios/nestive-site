@@ -11,7 +11,8 @@ const App = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 20px',
+        paddingLeft: '8px',
+        paddingRight: '20px',
         backgroundColor: 'black',
         height: '80px',
         overflow: 'hidden'
