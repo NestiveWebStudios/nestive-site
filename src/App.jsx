@@ -22,7 +22,7 @@ const App = () => {
   <img 
     src="/favicon.png" 
     alt="Nestive Icon" 
-    style={{ height: '24px', width: '24px' }} 
+    style={{ height: '32px', width: '32px' }} 
   />
 </nav>
 
