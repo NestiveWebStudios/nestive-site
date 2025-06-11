@@ -13,7 +13,7 @@ const App = () => {
         justifyContent: 'space-between',
         paddingLeft: '0px',
         paddingRight: '20px',
-        backgroundColor: 'black',
+        backgroundColor: '#111827',
         height: '80px',
         overflow: 'hidden'
       }}>
