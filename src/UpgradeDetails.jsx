@@ -1,51 +1,105 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const UpgradeDetails = () => {
+  const [addons, setAddons] = useState({
+    copywriting: false,
+    analytics: false,
+    extraPage: false,
+  });
+
+  const prices = {
+    base: 9900, // $99.00
+    copywriting: 2500,
+    analytics: 1000,
+    extraPage: 1500,
+  };
+
+  const getTotal = () => {
+    let total = 0;
+    Object.keys(addons).forEach(key => {
+      if (addons[key]) total += prices[key];
+    });
+    return total;
+  };
+
+  const handleChange = (addon) => {
+    setAddons(prev => ({ ...prev, [addon]: !prev[addon] }));
+  };
+
+  const handleCheckout = () => {
+    // Replace with actual Stripe link or checkout handler
+    window.location.href = 'https://your-stripe-checkout-link.com';
+  };
+
   return (
-    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>
-        Upgrade to a Premium Site
-      </h1>
-
-      <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-        When you're ready to go pro, we’re ready to build something powerful.
-        Your free preview becomes a fully developed website — hosted, managed, and truly yours.
+    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+      <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>Like What You See?</h1>
+      <p style={{ fontSize: '18px', marginBottom: '30px' }}>
+        Launch your full website today for just <strong>$99</strong>. No domain needed — we’ll host it for you under our Nestive Web Studios platform.  
+        Want to use your own domain? Add it later or connect one anytime. 
+        Your site is fully managed by us, with edits and updates submitted directly to our team.
       </p>
 
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>
-        ⚡ What’s Included in the Upgrade:
-      </h2>
-      <ul style={{ marginTop: '10px', lineHeight: '1.8', paddingLeft: '20px' }}>
-        <li>✅ Full React + Vite rebuild (from static HTML to modern app)</li>
-        <li>✅ Lightning-fast site performance</li>
-        <li>✅ Clean, modular code structure (easy to maintain + expand)</li>
-        <li>✅ Lifetime hosting + custom domain setup</li>
-        <li>✅ Email/contact form integration</li>
-        <li>✅ Ongoing revisions + support</li>
-      </ul>
+      <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Optional Add-Ons:</h2>
+      <div style={{ marginBottom: '80px' }}>
+        <label style={{ display: 'block', marginBottom: '10px' }}>
+          <input
+            type="checkbox"
+            checked={addons.copywriting}
+            onChange={() => handleChange('copywriting')}
+          />
+          <span style={{ marginLeft: '10px' }}>📄 Professional Copywriting – $25</span>
+        </label>
 
-      <p style={{ marginTop: '20px', fontSize: '16px' }}>
-        Upgrading your site doesn’t just unlock premium features — it transforms your build from basic static HTML
-        into a real React + Vite web application. That means better speed, stability, and a foundation you can build on for years.
-      </p>
+        <label style={{ display: 'block', marginBottom: '10px' }}>
+          <input
+            type="checkbox"
+            checked={addons.analytics}
+            onChange={() => handleChange('analytics')}
+          />
+          <span style={{ marginLeft: '10px' }}>📊 Analytics & Visitor Tracking – $10</span>
+        </label>
 
-      <a
-        href="https://buy.stripe.com/test_YOUR_PAYMENT_LINK_HERE"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: 'inline-block',
-          marginTop: '30px',
-          padding: '12px 24px',
-          backgroundColor: '#000',
-          color: '#fff',
-          borderRadius: '6px',
-          textDecoration: 'none',
-          fontWeight: 'bold',
-        }}
-      >
-        Purchase Upgrade – $99 Flat Fee
-      </a>
+        <label style={{ display: 'block', marginBottom: '10px' }}>
+          <input
+            type="checkbox"
+            checked={addons.extraPage}
+            onChange={() => handleChange('extraPage')}
+          />
+          <span style={{ marginLeft: '10px' }}>📄 Extra Page (e.g. Contact/About) – $15</span>
+        </label>
+      </div>
+
+      {/* Sticky Checkout Bar */}
+      <div style={{
+        position: 'fixed',
+        bottom: '0',
+        left: '0',
+        width: '100%',
+        backgroundColor: '#fff',
+        borderTop: '1px solid #ddd',
+        padding: '20px',
+        textAlign: 'center',
+        boxShadow: '0 -2px 5px rgba(0,0,0,0.1)',
+        zIndex: '1000'
+      }}>
+        <strong>Total: ${( (prices.base + getTotal()) / 100 ).toFixed(2)}</strong>
+        <br />
+        <button
+          style={{
+            backgroundColor: '#000',
+            color: '#fff',
+            padding: '12px 24px',
+            border: 'none',
+            marginTop: '10px',
+            cursor: 'pointer',
+            fontSize: '16px'
+          }}
+          onClick={handleCheckout}
+        >
+          Launch Your Site – $99
+        </button>
+      </div>
     </div>
   );
 };
