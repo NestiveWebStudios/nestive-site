@@ -7,50 +7,46 @@ import UpgradeDetails from './UpgradeDetails';
 const App = () => {
   return (
     <Router>
-     <nav style={{ 
-  padding: '20px', 
-  backgroundColor: '#000', 
-  display: 'flex', 
-  justifyContent: 'space-between', 
-  alignItems: 'center' 
-   }}>
-  <div>
-    <Link to="/" style={{ color: 'white', marginRight: '20px' }}>Home</Link>
-    <Link to="/upgrade" style={{ color: 'white', marginRight: '20px' }}>Upgrade</Link>
-    <a href="mailto:support@nestiveweb.com" style={{ color: 'white', textDecoration: 'none' }}>
-  Contact
-</a>
-  </div>
-  <img 
-    src="/favicon.png" 
-    alt="Nestive Icon" 
-    style={{ height: '32px', width: '32px' }} 
-  />
-</nav>
+      <nav style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '15px 30px',
+        backgroundColor: '#000',
+      }}>
+        {/* Logo on the left */}
+        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/favicon.png"
+            alt="Nestive Logo"
+            style={{ width: '32px', height: '32px', marginRight: '10px' }}
+          />
+        </Link>
+
+        {/* Navigation on the right */}
+        <div>
+          <Link to="/" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
+            Home
+          </Link>
+          <Link to="/upgrade" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
+            Upgrade
+          </Link>
+          <a
+            href="mailto:support@nestiveweb.com"
+            style={{ color: 'white', textDecoration: 'none' }}
+          >
+            Contact
+          </a>
+        </div>
+      </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/upgrade" element={<Upgrade />} />
         <Route path="/upgrade-details" element={<UpgradeDetails />} />
       </Routes>
-
-      <footer style={{
-        marginTop: '40px',
-        padding: '20px',
-        backgroundColor: '#f5f5f5',
-        textAlign: 'center',
-        fontSize: '14px',
-        color: '#555'
-      }}>
-        &copy; 2025 Nestive Web Studios — All rights reserved. |{' '}
-        <a href="mailto:support@nestiveweb.com" style={{ color: '#555' }}>
-          support@nestiveweb.com
-        </a>
-      </footer>
     </Router>
   );
 };
-
-
 
 export default App;
