@@ -13,6 +13,23 @@ const Home = () => {
         We build clean, modern websites for creators and small businesses.  
         No templates. No fluff. Just real design that works.
       </p>
+      <a
+        href="https://forms.gle/ReBhRS2XLh8zzhMq7"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: 'inline-block',
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#000',
+          color: 'white',
+          textDecoration: 'none',
+          borderRadius: '5px'
+        }}
+      >
+        Request a Free Preview
+      </a>
+      <br />
       <img
         src="/nestive-logo-transparent.png"
         alt="Nestive Logo"
