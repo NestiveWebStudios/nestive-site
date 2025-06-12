@@ -3,7 +3,7 @@ import React from 'react';
 const UpgradeDetails = () => {
   const handleCheckout = () => {
     // Replace with your actual Stripe link
-    window.location.href = 'https://your-stripe-checkout-link.com';
+    window.location.href = 'https://buy.stripe.com/eVqbJ2aS1ejb7ZQaVydby00';
   };
 
   return (
