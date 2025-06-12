@@ -26,6 +26,7 @@ const App = () => {
           height: '80px',
           overflow: 'hidden'
         }}>
+          
           <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src="/nestive-transparent-logo.png"
