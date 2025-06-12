@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div style={{
-      backgroundColor: '#F9FAFB',
+      backgroundColor: '#1e293b',
       width: '100%',
       minHeight: 'calc(100vh - 80px - 100px)',  // adjusts for banner + footer
       padding: '60px 20px',

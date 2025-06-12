@@ -1,4 +1,33 @@
-body {
+/* Reset and base layout */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #F9FAFB;  /* Soft gray background for clean aesthetic */
   font-family: Arial, sans-serif;
+  color: #1f2937;  /* Dark slate text for readability */
+  box-sizing: border-box;
+}
+
+/* Ensure root always fills full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utility styles for links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Optional: make buttons smoother */
+button, a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: spacing cleanup if needed */
+* {
+  box-sizing: inherit;
 }
