@@ -48,15 +48,16 @@ const UpgradeDetails = () => {
           border: 'none',
           cursor: 'pointer',
           fontSize: '16px',
+          fontWeight: 'bold',
           fontFamily: 'inherit',
           borderRadius: '6px',
           transition: 'background-color 0.3s'
         }}
         onClick={handleCheckout}
-        onMouseOver={(e) => (e.target.style.backgroundColor = '#1f2937')}
+        onMouseOver={(e) => (e.target.style.backgroundColor = '#fff')}
         onMouseOut={(e) => (e.target.style.backgroundColor = '#8B5CF6')}
       >
-        <strong>Launch Your Site – $49</strong>
+        Launch Your Site – $49
       </button>
     </div>
 </div>

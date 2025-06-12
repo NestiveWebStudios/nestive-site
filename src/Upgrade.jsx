@@ -79,7 +79,7 @@ const Upgrade = () => {
           borderRadius: '6px',
           transition: 'background-color 0.3s'
         }}
-        onMouseOver={e => e.target.style.backgroundColor = '#1f2937'}
+        onMouseOver={e => e.target.style.backgroundColor = '#ffff'}
         onMouseOut={e => e.target.style.backgroundColor = '#8B5CF6'}
       >
         Launch My Site

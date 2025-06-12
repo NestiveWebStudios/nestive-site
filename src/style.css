@@ -3,9 +3,9 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #8bf7f7; 
+  background-color: #F4F4F4; 
   font-family: 'Urbanist', sans-serif;
-  color: #000000; 
+  color: #000; 
   box-sizing: border-box;
   font-weight: lighter;
   line-height: 1.6;
@@ -29,6 +29,7 @@ a {
 /* Buttons and anchor hover/transition effects */
 button, a {
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight:'bold';
 }
 
 /* Consistent layout spacing */
@@ -55,5 +56,5 @@ button, a {
 }
 
 .btn:hover {
-  background-color: #fdfeff;
+  background-color: #e7ebf0;
 }

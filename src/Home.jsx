@@ -67,7 +67,7 @@ const Home = () => {
           marginTop: '20px'
 
         }}
-        onMouseOver={e => e.target.style.backgroundColor = '#1f2937'}
+        onMouseOver={e => e.target.style.backgroundColor = '#ffff'}
         onMouseOut={e => e.target.style.backgroundColor = '#8B5CF6'}
       >
         Request a Free Preview
