@@ -10,9 +10,11 @@ const Footer = () => {
       fontWeight: 'lighter',
       color: 'inherit',
       borderTop: '5px solid #000',
-      marginTop: '80px'
+      marginTop: 'auto'  // ⬅️ this is the key for a "sticky-to-bottom-only-if-needed" footer
     }}>
-      <p>Contact us at <a href="mailto:support@nestiveweb.com" style={{ color: 'inherit', }}>support@nestiveweb.com</a></p>
+      <p>
+        Contact us at <a href="mailto:support@nestiveweb.com" style={{ color: 'inherit' }}>support@nestiveweb.com</a>
+      </p>
       <p>© 2025 Nestive Web Studios. All rights reserved.</p>
     </footer>
   );
