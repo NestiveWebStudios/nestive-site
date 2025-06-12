@@ -3,17 +3,16 @@ import React from 'react';
 const Home = () => {
   return (
     <div style={{
+      backgroundColor: '#F9FAFB',
       width: '100%',
-      height: '100vh',
-      backgroundColor: '#ede9fe',
+      minHeight: 'calc(100vh - 80px - 100px)',  // adjusts for banner + footer
       padding: '60px 20px',
       fontFamily: 'Arial, sans-serif',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       textAlign: 'center',
-      maxWidth: '800px',
-      margin: '0 auto'
+      boxSizing: 'border-box'
     }}>
       <h1 style={{
         fontSize: '48px',
