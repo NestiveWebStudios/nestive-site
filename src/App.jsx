@@ -12,7 +12,8 @@ const App = () => {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        backgroundColor: '#EDE9FE' // Matches footer and global theme
+        backgroundColor: 'inherit',
+        fontFamily: "'Urbanist', sans-serif" // Ensure fallback to Urbanist if style.css fails
       }}>
         <nav style={{
           display: 'flex',
@@ -21,6 +22,7 @@ const App = () => {
           paddingLeft: '0px',
           paddingRight: '20px',
           backgroundColor: '#8B5CF6',
+          borderBottom: '5px solid #000',
           height: '80px',
           overflow: 'hidden'
         }}>
@@ -40,32 +42,32 @@ const App = () => {
 
           <div>
             <Link to="/" style={{
-              color: '#1e293b',
-              marginRight: '20px',
+              marginRight: '10px',
               textDecoration: 'none',
-              fontWeight: '500'
+              fontWeight: 'bold'
             }}>
               Home
             </Link>
             <Link to="/upgrade" style={{
-              color: '#1e293b',
-              marginRight: '20px',
+              marginRight: '10px',
               textDecoration: 'none',
-              fontWeight: '500'
+              borderLeft: '2px solid #000',
+              borderRight: '2px solid #000',
+              paddingRight: '10px',
+              paddingLeft: '10px',
+              fontWeight: 'bold'
             }}>
               Upgrade
             </Link>
             <a href="mailto:support@nestiveweb.com" style={{
-              color: '#1e293b',
               textDecoration: 'none',
-              fontWeight: '500'
+              fontWeight: 'bold'
             }}>
               Contact
             </a>
           </div>
         </nav>
 
-        {/* Main page content expands to fill remaining space */}
         <div style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />

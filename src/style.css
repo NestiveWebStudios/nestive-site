@@ -3,11 +3,14 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #EDE9FE;  /* Matches footer */
-  font-family: Arial, sans-serif;
-  color: #1f2937;
+  background-color: #daee90; /* Light purple to match footer */
+  font-family: 'Urbanist', sans-serif;
+  color: #000000; /* Nestive deep blue */
   box-sizing: border-box;
+  font-weight: lighter;
+  line-height: 1.6;
 }
+
 
 /* Ensure root always fills full height */
 #root {
@@ -16,18 +19,41 @@ html, body {
   flex-direction: column;
 }
 
-/* Utility styles for links */
+/* Consistent link styling */
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
-/* Optional: make buttons smoother */
+/* Buttons and anchor hover/transition effects */
 button, a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Optional: spacing cleanup if needed */
-* {
+/* Consistent layout spacing */
+*,
+*::before,
+*::after {
   box-sizing: inherit;
+}
+
+/* Optional utility classes if you want to use them */
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background-color: #000;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1f2937;
 }

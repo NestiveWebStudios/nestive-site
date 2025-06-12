@@ -4,35 +4,34 @@ const Home = () => {
   return (
     <div style={{
       width: '100%',
-      minHeight: 'calc(100vh - 80px - 100px)', // fills screen minus banner + footer
+      minHeight: 'calc(100vh - 80px - 100px)',
       padding: '60px 20px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       textAlign: 'center',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      color: 'inherit',
+      backgroundColor: 'inherit'
     }}>
       <h1 style={{
         fontSize: '48px',
         marginBottom: '20px',
-        fontWeight: 'bold',
-        color: '#1e293b'
+        fontWeight: '700'
       }}>
         Your Dream Site Starts Here
       </h1>
 
       <p style={{
         fontSize: '20px',
-        marginBottom: '10px',
-        color: '#4B5563'
+        marginBottom: '10px'
       }}>
         Fast. Simple. No stress.
       </p>
 
       <p style={{
         fontSize: '18px',
-        marginBottom: '30px',
-        color: '#6B7280'
+        marginBottom: '30px'
       }}>
         We build clean, modern websites for creators and small businesses.<br />
         No templates. No fluff. Just real design that works.
