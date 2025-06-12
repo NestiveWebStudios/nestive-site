@@ -71,8 +71,8 @@ const Upgrade = () => {
         style={{
           display: 'inline-block',
           padding: '16px 36px',
-          backgroundColor: '#000',
-          color: 'white',
+          backgroundColor: '#8B5CF6',
+          color: '#000',
           fontSize: '18px',
           fontWeight: 'bold',
           textDecoration: 'none',
@@ -80,7 +80,7 @@ const Upgrade = () => {
           transition: 'background-color 0.3s'
         }}
         onMouseOver={e => e.target.style.backgroundColor = '#1f2937'}
-        onMouseOut={e => e.target.style.backgroundColor = '#000'}
+        onMouseOut={e => e.target.style.backgroundColor = '#8B5CF6'}
       >
         Launch My Site
       </Link>

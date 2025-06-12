@@ -46,8 +46,8 @@ button, a {
 .btn {
   display: inline-block;
   padding: 14px 30px;
-  background-color: #000;
-  color: white;
+  background-color: #8B5CF6;
+  color: #000;
   font-size: 18px;
   font-weight: bold;
   border-radius: 6px;
@@ -55,5 +55,5 @@ button, a {
 }
 
 .btn:hover {
-  background-color: #1f2937;
+  background-color: #fdfeff;
 }

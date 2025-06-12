@@ -26,15 +26,15 @@ const UpgradeDetails = () => {
       }}>
         🚀 Let’s Launch It.
       </h2>
-
+      <h3> ✅ The $49 “Launch Package” </h3>
       <p style={{ fontSize: '18px', marginBottom: '20px', color: 'inherit' }}>
-        One payment and your preview goes live — <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>no domain needed.</span>
+        Your Site, Live — <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>$49 Flat</span>
       </p>
       <p style={{ fontSize: '18px', marginBottom: '20px', color: 'inherit' }}>
-        We host it. We manage it. <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>You relax.</span>
+        🚀 Your live site stays up <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>permanently.</span>
       </p>
       <p style={{ fontSize: '18px', marginBottom: '20px', color: 'inherit' }}>
-        Want your own domain? <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Add it anytime.</span>
+        💻 Fully hosted — no tech skills or setup required
       </p>
       <p style={{ fontSize: '18px', color: 'inherit' }}>
         Need updates? <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Just email us.</span>
@@ -42,8 +42,8 @@ const UpgradeDetails = () => {
     <div style={{ marginTop: '40px', textAlign: 'center' }}>
       <button
         style={{
-          backgroundColor: '#000',
-          color: '#fff',
+          backgroundColor: '#8B5CF6',
+          color: '#000',
           padding: '12px 24px',
           border: 'none',
           cursor: 'pointer',
@@ -54,9 +54,9 @@ const UpgradeDetails = () => {
         }}
         onClick={handleCheckout}
         onMouseOver={(e) => (e.target.style.backgroundColor = '#1f2937')}
-        onMouseOut={(e) => (e.target.style.backgroundColor = '#000')}
+        onMouseOut={(e) => (e.target.style.backgroundColor = '#8B5CF6')}
       >
-        Launch Your Site – $99
+        <strong>Launch Your Site – $49</strong>
       </button>
     </div>
 </div>
