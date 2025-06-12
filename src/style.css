@@ -10,6 +10,8 @@ html, body {
   font-weight: lighter;
   line-height: 1.6;
 }
+
+/* Logo Styling */
 .nav-logo {
   height: 120px;
   max-height: 120px;
@@ -17,12 +19,6 @@ html, body {
   object-fit: contain;
   margin: 0;
   padding: 0;
-}
-
-@media (max-width: 768px) {
-  .nav-logo {
-    height: 50px;
-  }
 }
 
 /* Ensure root always fills full height */
@@ -42,7 +38,7 @@ a {
 /* Buttons and anchor hover/transition effects */
 button, a {
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-weight:'bold';
+  font-weight: bold;
 }
 
 /* Consistent layout spacing */
@@ -52,11 +48,12 @@ button, a {
   box-sizing: inherit;
 }
 
-/* Optional utility classes if you want to use them */
+/* Optional utility classes */
 .text-center {
   text-align: center;
 }
 
+/* Button style */
 .btn {
   display: inline-block;
   padding: 14px 30px;
@@ -70,4 +67,61 @@ button, a {
 
 .btn:hover {
   background-color: #e7ebf0;
+}
+
+/* Desktop quote styling */
+.quote {
+  font-weight: bold;
+  color: #000;
+  font-size: 1rem;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .nav-logo {
+    margin-top: -40px;
+    height: 140px;
+    margin-bottom: -20px;
+  }
+
+  .quote {
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .nav-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-right > div {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-right a {
+    font-size: 14px;
+    padding: 5px 0;
+  }
 }

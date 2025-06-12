@@ -21,7 +21,7 @@ const App = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '10px 20px', // Added vertical padding
+          padding: '10px 20px',
           backgroundColor: '#8B5CF6',
           borderBottom: '5px solid #000',
           borderTop: '5px solid #000',
@@ -29,30 +29,25 @@ const App = () => {
           position: 'relative'
         }}>
 
-          {/* Logo */}
-          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src="/nestive-transparent-logo.png"
-              alt="Nestive Logo"
-              className="nav-logo"
-            />
-          </Link>
+          {/* Logo + Quote block */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {/* Logo */}
+            <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                src="/nestive-transparent-logo.png"
+                alt="Nestive Logo"
+                className="nav-logo"
+              />
+            </Link>
 
-          {/* Quote Centered in Banner */}
-          <div style={{
-            position: 'absolute',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            fontWeight: 'bold',
-            color: '#000',
-            fontSize: '1rem',
-            whiteSpace: 'nowrap'
-          }}>
-            Launch fast. Look great. Stress less.
+            {/* Quote */}
+            <div className="quote">
+              Launch fast. Look great. Stress less.
+            </div>
           </div>
 
           {/* Social + Navigation */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div className="nav-right" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             {/* Social Icons */}
             <div style={{ display: 'flex', gap: '10px' }}>
               <a
@@ -88,7 +83,7 @@ const App = () => {
             </div>
 
             {/* Navigation Links */}
-            <div style={{ display: 'flex', gap: '15px' }}>
+            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
               <Link to="/" style={{
                 textDecoration: 'none',
                 fontWeight: 'bold',
@@ -97,8 +92,8 @@ const App = () => {
                 paddingLeft: '10px',
                 transition: 'color 0.2s'
               }}
-              onMouseEnter={e => e.target.style.color = '#ddd'}
-              onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseEnter={e => e.target.style.color = '#ddd'}
+                onMouseLeave={e => e.target.style.color = '#fff'}
               >
                 Home
               </Link>
@@ -111,8 +106,8 @@ const App = () => {
                 color: '#fff',
                 transition: 'color 0.2s'
               }}
-              onMouseEnter={e => e.target.style.color = '#ddd'}
-              onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseEnter={e => e.target.style.color = '#ddd'}
+                onMouseLeave={e => e.target.style.color = '#fff'}
               >
                 Launch My Site
               </Link>
