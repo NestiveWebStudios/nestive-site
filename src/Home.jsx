@@ -3,11 +3,9 @@ import React from 'react';
 const Home = () => {
   return (
     <div style={{
-      backgroundColor: '#1e293b',
       width: '100%',
-      minHeight: 'calc(100vh - 80px - 100px)',  // adjusts for banner + footer
+      minHeight: 'calc(100vh - 80px - 100px)', // fills screen minus banner + footer
       padding: '60px 20px',
-      fontFamily: 'Arial, sans-serif',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

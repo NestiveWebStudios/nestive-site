@@ -3,9 +3,9 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #ede9fe;  /* Soft gray background for clean aesthetic */
+  background-color: #EDE9FE;  /* Matches footer */
   font-family: Arial, sans-serif;
-  color: #1f2937;  /* Dark slate text for readability */
+  color: #1f2937;
   box-sizing: border-box;
 }
 
