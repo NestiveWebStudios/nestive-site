@@ -3,27 +3,52 @@ import { Link } from 'react-router-dom';
 
 const Upgrade = () => {
   return (
-    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
-      <h2 style={{ fontSize: '30px', marginBottom: '10px' }}>Do you like this site?</h2>
-      <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>
-        Satisfied with the preview you requested?
+    <div style={{
+      width: '100%',
+      minHeight: 'calc(100vh - 80px - 100px)',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '40px 20px',
+      boxSizing: 'border-box'
+    }}>
+      <h1 style={{
+        fontSize: '56px',
+        fontWeight: 'bold',
+        marginBottom: '20px',
+        color: '#1e293b'
+      }}>
+        Make Your Site a Reality
+      </h1>
+
+      <p style={{
+        fontSize: '20px',
+        marginBottom: '40px',
+        maxWidth: '600px',
+        color: '#374151'
+      }}>
+        You’ve seen the preview. Let’s turn it into your online home — fast, easy, and done for you.
       </p>
-      <p style={{ fontSize: '16px', marginBottom: '30px' }}>
-        Tap below to upgrade and make it yours.
-      </p>
+
       <Link
         to="/upgrade-details"
         style={{
           display: 'inline-block',
-          padding: '12px 24px',
+          padding: '16px 36px',
           backgroundColor: '#000',
-          color: '#fff',
+          color: 'white',
+          fontSize: '18px',
+          fontWeight: 'bold',
           textDecoration: 'none',
           borderRadius: '6px',
-          fontWeight: 'bold'
+          transition: 'background-color 0.3s'
         }}
+        onMouseOver={e => e.target.style.backgroundColor = '#1f2937'}
+        onMouseOut={e => e.target.style.backgroundColor = '#000'}
       >
-        Upgrade My Site
+        Launch My Site
       </Link>
     </div>
   );
