@@ -18,7 +18,7 @@ const Upgrade = () => {
         fontSize: '56px',
         fontWeight: 'bold',
         marginBottom: '20px',
-        color: '#1e293b'
+        color: 'inherit'
       }}>
         Make Your Site a Reality
       </h1>
@@ -27,7 +27,7 @@ const Upgrade = () => {
         fontSize: '20px',
         marginBottom: '40px',
         maxWidth: '600px',
-        color: '#374151'
+        color: 'inherit'
       }}>
         You’ve seen the preview. Let’s turn it into your online home — fast, easy, and done for you.
       </p>

@@ -9,7 +9,7 @@ const Footer = () => {
       fontSize: '14px',
       fontWeight: 'lighter',
       color: 'inherit',
-      borderTop: '20px solid #000',
+      borderTop: '5px solid #000',
       marginTop: '80px'
     }}>
       <p>Contact us at <a href="mailto:support@nestiveweb.com" style={{ color: 'inherit', }}>support@nestiveweb.com</a></p>
