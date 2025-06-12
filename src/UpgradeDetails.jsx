@@ -14,6 +14,8 @@ const UpgradeDetails = () => {
       padding: '40px 20px',
       color: 'inherit'
     }}>
+  
+       
       <h2 style={{
         fontSize: '36px',
         fontWeight: '800',

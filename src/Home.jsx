@@ -32,7 +32,7 @@ const Home = () => {
 
       
 
-      <h1>Your Dream Site Starts Here</h1>
+      <h1>✨Your Dream Site Starts Here✨</h1>
 
       <p style={{
         fontSize: '20px',
@@ -56,16 +56,19 @@ const Home = () => {
         style={{
           display: 'inline-block',
           padding: '14px 30px',
-          backgroundColor: '#000',
-          color: 'white',
+          backgroundColor: '#8B5CF6',
+          color: '000',
           fontSize: '18px',
           fontWeight: 'bold',
           textDecoration: 'none',
           borderRadius: '6px',
-          transition: 'background-color 0.3s'
+          transition: 'background-color 0.3s',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          marginTop: '20px'
+
         }}
         onMouseOver={e => e.target.style.backgroundColor = '#1f2937'}
-        onMouseOut={e => e.target.style.backgroundColor = '#000'}
+        onMouseOut={e => e.target.style.backgroundColor = '#8B5CF6'}
       >
         Request a Free Preview
       </a>

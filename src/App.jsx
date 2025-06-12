@@ -32,7 +32,7 @@ const App = () => {
               src="/nestive-transparent-logo.png"
               alt="Nestive Logo"
               style={{
-                height: '100%',
+                height: '700px',
                 width: 'auto',
                 maxWidth: '33%',
                 objectFit: 'contain',
