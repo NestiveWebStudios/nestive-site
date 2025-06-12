@@ -10,7 +10,20 @@ html, body {
   font-weight: lighter;
   line-height: 1.6;
 }
+.nav-logo {
+  height: 120px;
+  max-height: 120px;
+  width: auto;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
 
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 50px;
+  }
+}
 
 /* Ensure root always fills full height */
 #root {

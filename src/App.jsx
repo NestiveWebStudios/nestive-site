@@ -13,56 +13,66 @@ const App = () => {
         flexDirection: 'column',
         minHeight: '100vh',
         backgroundColor: 'inherit',
-        fontFamily: "'Urbanist', sans-serif" // Ensure fallback to Urbanist if style.css fails
+        fontFamily: "'Urbanist', sans-serif"
       }}>
         <nav style={{
+          width: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          paddingLeft: '0px',
-          paddingRight: '20px',
+          padding: '0 20px',
           backgroundColor: '#8B5CF6',
           borderBottom: '5px solid #000',
           height: '80px',
-          overflow: 'hidden'
+          boxSizing: 'border-box',
+          position: 'relative'
         }}>
-          
+
+          {/* Logo */}
           <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src="/nestive-transparent-logo.png"
               alt="Nestive Logo"
-              style={{
-                height: '700px',
-                width: 'auto',
-                maxWidth: '33%',
-                objectFit: 'contain',
-                marginRight: '10px'
-              }}
+              className="nav-logo"
             />
           </Link>
 
-          <div>
+          {/* Quote Centered in Banner */}
+          <div style={{
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            fontWeight: 'bold',
+            color: '#000',
+            fontSize: '1rem',
+            whiteSpace: 'nowrap'
+          }}>
+            Launch fast. Look great. Stress less.
+          </div>
+
+          {/* Navigation Links */}
+          <div style={{ display: 'flex', gap: '15px' }}>
             <Link to="/" style={{
-              marginRight: '10px',
               textDecoration: 'none',
-              fontWeight: 'bold'
+              fontWeight: 'bold',
+              color: '#fff'
             }}>
               Home
             </Link>
-            <Link to="/upgrade" style={{
-              marginRight: '10px',
+            <Link to="/upgrade-details" style={{
               textDecoration: 'none',
               borderLeft: '2px solid #000',
               borderRight: '2px solid #000',
-              paddingRight: '10px',
-              paddingLeft: '10px',
-              fontWeight: 'bold'
+              padding: '0 10px',
+              fontWeight: 'bold',
+              color: '#fff'
             }}>
-              Upgrade
+              Launch My Site
             </Link>
             <a href="mailto:support@nestiveweb.com" style={{
               textDecoration: 'none',
-              fontWeight: 'bold'
+              fontWeight: 'bold',
+              color: '#fff'
             }}>
               Contact
             </a>

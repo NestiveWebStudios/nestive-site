@@ -15,22 +15,6 @@ const Home = () => {
       backgroundColor: 'inherit',
       position: 'relative'
     }}>
-      
-      {/* Top Horizontal Lines */}
-      <div style={{
-        width: '1000px',
-        height: '5px',
-        backgroundColor: '#000',
-        marginBottom: '8px'
-      }} />
-      <div style={{
-        width: '1000px',
-        height: '5px',
-        backgroundColor: '#000',
-        marginBottom: '30px'
-      }} />
-
-      
 
       <h1>✨Your Dream Site Starts Here✨</h1>
 
@@ -72,20 +56,6 @@ const Home = () => {
       >
         Request a Free Preview
       </a>
-
-      {/* Bottom Horizontal Lines */}
-      <div style={{
-        width: '1000px',
-        height: '5px',
-        backgroundColor: '#000',
-        marginTop: '30px'
-      }} />
-      <div style={{
-        width: '1000px',
-        height: '5px',
-        backgroundColor: '#000',
-        marginTop: '8px'
-      }} />
     </div>
   );
 };

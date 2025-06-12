@@ -14,40 +14,6 @@ const Upgrade = () => {
       padding: '40px 20px',
       boxSizing: 'border-box'
     }}>
-      {/* Left Vertical Lines */}
-      <div style={{
-        position: 'absolute',
-        top: '180px',
-        bottom: '100px',
-        left: '200px',
-        width: '5px',
-        backgroundColor: '#000'
-      }} />
-       <div style={{
-        position: 'absolute',
-        top: '180px',
-        bottom: '100px',
-        left: '180px',
-        width: '5px',
-        backgroundColor: '#000'
-      }} />
-      {/* Right Vertical Lines */}
-      <div style={{
-        position: 'absolute',
-        top: '180px',
-        bottom: '100px',
-        right: '200px',
-        width: '5px',
-        backgroundColor: '#000'
-      }} />
-       <div style={{
-        position: 'absolute',
-        top: '180px',
-        bottom: '100px',
-        right: '180px',
-        width: '5px',
-        backgroundColor: '#000'
-      }} />
       <h1 style={{
         fontSize: '56px',
         fontWeight: 'bold',
