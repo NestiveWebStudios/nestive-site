@@ -27,10 +27,10 @@ const App = () => {
           alignItems: 'center',
           position: 'relative'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
             <img src="/nestive-icon.png" alt="Nestive Logo" style={{ height: '30px' }} />
-            <span style={{ fontWeight: '700', fontSize: '1rem' }}>NESTIVE</span>
-          </div>
+            <span style={{ fontWeight: '700', fontSize: '1rem', color: '#000' }}>NESTIVE</span>
+          </Link>
 
           {/* Social Icons */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
