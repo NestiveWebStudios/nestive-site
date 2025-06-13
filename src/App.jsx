@@ -28,7 +28,6 @@ const App = () => {
           boxSizing: 'border-box',
           position: 'relative'
         }}>
-
           {/* Logo + Quote block */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {/* Logo */}
@@ -40,23 +39,31 @@ const App = () => {
               />
             </Link>
 
-            {/* Quote */}
-            <div className="quote">
-              Launch fast. Look great. Stress less.
+            {/* Quote below the logo */}
+            <div className="quote" style={{
+              fontWeight: 'bold',
+              color: '#000',
+              fontSize: '1rem',
+              whiteSpace: 'nowrap',
+              marginTop: '5px'
+            }}>
+              Launch <span style={{ color: '#E7E47C' }}>fast.</span>{' '}
+              Look <span style={{ color: '#E7E47C' }}>great.</span>{' '}
+              Stress <span style={{ color: '#E7E47C' }}>less.</span>
             </div>
           </div>
 
           {/* Social + Navigation */}
-          <div className="nav-right" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', height: '100%' }}>
             {/* Social Icons */}
             <div style={{ display: 'flex', gap: '10px' }}>
               <a
                 href="https://x.com/nestiveweb"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#fff', transition: 'color 0.2s' }}
+                style={{ color: '#E7E47C', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.target.style.color = '#ddd'}
-                onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseLeave={e => e.target.style.color = '#E7E47C'}
               >
                 <FaXTwitter size={20} />
               </a>
@@ -64,9 +71,9 @@ const App = () => {
                 href="https://www.reddit.com/user/nestiveweb"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#fff', transition: 'color 0.2s' }}
+                style={{ color: '#E7E47C', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.target.style.color = '#ddd'}
-                onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseLeave={e => e.target.style.color = '#E7E47C'}
               >
                 <FaRedditAlien size={20} />
               </a>
@@ -74,55 +81,77 @@ const App = () => {
                 href="https://instagram.com/nestiveweb"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#fff', transition: 'color 0.2s' }}
+                style={{ color: '#E7E47C', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.target.style.color = '#ddd'}
-                onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseLeave={e => e.target.style.color = '#E7E47C'}
               >
                 <FaInstagram size={20} />
               </a>
             </div>
 
             {/* Navigation Links */}
-            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '15px',
+              height: '100%'
+            }}>
+              {/* Home Link */}
               <Link to="/" style={{
                 textDecoration: 'none',
                 fontWeight: 'bold',
-                color: '#fff',
+                color: '#E7E47C',
                 borderLeft: '2px solid #000',
-                paddingLeft: '10px',
-                transition: 'color 0.2s'
+                padding: '6px 10px',
+                transition: 'color 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                height: '100%'
               }}
                 onMouseEnter={e => e.target.style.color = '#ddd'}
-                onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseLeave={e => e.target.style.color = '#E7E47C'}
               >
                 Home
               </Link>
+
+              {/* Launch My Site */}
               <Link to="/upgrade-details" style={{
                 textDecoration: 'none',
                 borderLeft: '2px solid #000',
                 borderRight: '2px solid #000',
-                padding: '0 10px',
+                padding: '6px 14px',
+                minWidth: '85px',
                 fontWeight: 'bold',
-                color: '#fff',
+                color: '#E7E47C',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                height: '100%',
                 transition: 'color 0.2s'
               }}
                 onMouseEnter={e => e.target.style.color = '#ddd'}
-                onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseLeave={e => e.target.style.color = '#E7E47C'}
               >
-                Launch My Site
+                Launch My<br />Site
               </Link>
+
+              {/* Contact Link */}
               <a
                 href="mailto:support@nestiveweb.com"
                 style={{
                   textDecoration: 'none',
                   fontWeight: 'bold',
-                  color: '#fff',
+                  color: '#E7E47C',
                   borderRight: '2px solid #000',
-                  paddingRight: '10px',
-                  transition: 'color 0.2s'
+                  padding: '6px 10px',
+                  transition: 'color 0.2s',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '100%'
                 }}
                 onMouseEnter={e => e.target.style.color = '#ddd'}
-                onMouseLeave={e => e.target.style.color = '#fff'}
+                onMouseLeave={e => e.target.style.color = '#E7E47C'}
               >
                 Contact
               </a>
