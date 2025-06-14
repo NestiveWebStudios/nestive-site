@@ -63,7 +63,7 @@ const Home = () => {
               transitionDelay: '0.1s',
             }}
           />
-          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', right: '15px', marginBottom: '-4px' }}>
             <span style={{
               fontSize: '40px',
               fontWeight: 800,

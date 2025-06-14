@@ -8,7 +8,7 @@ import { FaRedditAlien, FaInstagram, FaXTwitter, FaTiktok } from 'react-icons/fa
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [logoHovered, setLogoHovered] = useState(false); // NEW
+  const [logoHovered, setLogoHovered] = useState(false);
 
   return (
     <Router>
@@ -52,10 +52,10 @@ const App = () => {
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
-                marginLeft: '2px',
-                marginBottom: '-10px',
+                marginLeft: '-4px',
+                marginBottom: '-24px',
                 opacity: logoHovered ? 1 : 0,
-                transform: logoHovered ? 'translateX(0)' : 'translateX(-10px)',
+                transform: logoHovered ? 'translateX(-10px)' : 'translateX(-20px)',
                 transition: 'opacity 0.3s ease, transform 0.3s ease'
               }}>
                 <span style={{ fontSize: '28px', fontWeight: '800', color: '#0F0F0F' }}>
@@ -66,7 +66,7 @@ const App = () => {
                   fontFamily: `'Caveat', cursive`,
                   color: '#0F0F0F',
                   marginTop: '-10px',
-                  marginLeft: '20px'
+                  marginLeft: '10px'
                 }}>
                   Web Studios
                 </span>
@@ -76,7 +76,6 @@ const App = () => {
 
           {/* Right Section: Socials + Hamburger */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {/* Social Icons */}
             <div className="social-icons" style={{ display: 'flex', gap: '12px', marginRight: '12px' }}>
               <a href="https://www.tiktok.com/@nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
                 <FaTiktok size={20} />
@@ -92,7 +91,6 @@ const App = () => {
               </a>
             </div>
 
-            {/* Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               style={{
@@ -135,11 +133,10 @@ const App = () => {
           </Routes>
         </div>
 
-        {/* Footer */}
         <Footer />
       </div>
 
-      {/* CSS for hiding social icons on small screens */}
+      {/* Hide socials on mobile */}
       <style>{`
         @media (max-width: 640px) {
           .social-icons {
