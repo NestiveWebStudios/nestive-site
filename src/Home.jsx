@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const [showN, setShowN] = useState(false);
   const [showEstive, setShowEstive] = useState(false);
+  const [showWebStudios, setShowWebStudios] = useState(false);
   const [visibleWords, setVisibleWords] = useState([]);
 
   const topLine = ['Websites', 'that'];
@@ -13,10 +14,11 @@ const Home = () => {
     const timers = [];
 
     timers.push(setTimeout(() => setShowN(true), 100));
-    timers.push(setTimeout(() => setShowEstive(true), 900)); // estive appears after N lands
+    timers.push(setTimeout(() => setShowEstive(true), 900));
+    timers.push(setTimeout(() => setShowWebStudios(true), 1300));
 
     [...topLine, ...bottomLine].forEach((word, i) => {
-      const delay = 1300 + i * 350 + (word === 'Fast.' ? 400 : 0);
+      const delay = 1700 + i * 350 + (word === 'Fast.' ? 400 : 0);
       timers.push(setTimeout(() => {
         setVisibleWords(prev => [...prev, word]);
       }, delay));
@@ -46,31 +48,51 @@ const Home = () => {
     }}>
 
       {/* Animated Nestive Logo */}
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px', height: '72px' }}>
-        <img
-          src="/nestive-favicon-large.png"
-          alt="N icon"
-          style={{
-            width: '72px',
-            height: '72px',
-            transform: showN ? 'translateY(0)' : 'translateY(-30px)',
-            opacity: showN ? 1 : 0,
-            transition: 'transform 0.6s ease-out, opacity 0.6s ease-out',
-            marginRight: showEstive ? '2px' : '0',
-            transitionDelay: '0.1s',
-          }}
-        />
-        <span style={{
-          fontSize: '40px',
-          fontWeight: 800,
-          color: '#0F0F0F',
-          opacity: showEstive ? 1 : 0,
-          transform: showEstive ? 'translateX(0)' : 'translateX(-4px)',
-          transition: 'opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s',
-          paddingBottom: '2px'
-        }}>
-          estive<span style={{ color: '#8B5CF6' }}>.</span>
-        </span>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/nestive-favicon-large.png"
+            alt="N icon"
+            style={{
+              width: '72px',
+              height: '72px',
+              transform: showN ? 'translateY(0)' : 'translateY(-30px)',
+              opacity: showN ? 1 : 0,
+              transition: 'transform 0.6s ease-out, opacity 0.6s ease-out',
+              marginRight: showEstive ? '2px' : '0',
+              transitionDelay: '0.1s',
+            }}
+          />
+          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
+            <span style={{
+              fontSize: '40px',
+              fontWeight: 800,
+              color: '#0F0F0F',
+              opacity: showEstive ? 1 : 0,
+              transform: showEstive ? 'translateX(0)' : 'translateX(-4px)',
+              transition: 'opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s',
+              paddingBottom: '0px'
+            }}>
+              estive<span style={{ color: '#8B5CF6', right: '1px' }}>.</span>
+            </span>
+
+            {/* Web Studios aligned under right side */}
+            <span style={{
+              position: 'absolute',
+              top: '36px',
+              
+              right: '2px',
+              fontSize: '16px',
+              fontFamily: `'Caveat', cursive`,
+              color: '#0F0F0F',
+              opacity: showWebStudios ? 1 : 0,
+              transform: showWebStudios ? 'translateY(0)' : 'translateY(-10px)',
+              transition: 'all 0.6s ease-out'
+            }}>
+              Web Studios
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Headline */}

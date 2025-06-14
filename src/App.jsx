@@ -8,6 +8,7 @@ import { FaRedditAlien, FaInstagram, FaXTwitter, FaTiktok } from 'react-icons/fa
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoHovered, setLogoHovered] = useState(false); // NEW
 
   return (
     <Router>
@@ -21,14 +22,56 @@ const App = () => {
         <nav style={{
           backgroundColor: '#fff',
           borderBottom: '1px solid #ddd',
-          padding: '20px 24px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           position: 'relative'
         }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <img src="/nestive-transparent-logo.png" alt="Nestive Logo" style={{ height: '80px' }} />
+          <Link
+            to="/"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              position: 'relative',
+              textDecoration: 'none',
+              height: '100px',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={() => setLogoHovered(true)}
+            onMouseLeave={() => setLogoHovered(false)}
+          >
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+              {/* N icon */}
+              <img
+                src="/nestive-favicon-large.png"
+                alt="Nestive N Logo"
+                style={{ height: '80px', transition: 'transform 0.3s ease-in-out' }}
+              />
+
+              {/* Hover-reveal text */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                marginLeft: '2px',
+                marginBottom: '-10px',
+                opacity: logoHovered ? 1 : 0,
+                transform: logoHovered ? 'translateX(0)' : 'translateX(-10px)',
+                transition: 'opacity 0.3s ease, transform 0.3s ease'
+              }}>
+                <span style={{ fontSize: '28px', fontWeight: '800', color: '#0F0F0F' }}>
+                  estive<span style={{ color: '#8B5CF6' }}>.</span>
+                </span>
+                <span style={{
+                  fontSize: '14px',
+                  fontFamily: `'Caveat', cursive`,
+                  color: '#0F0F0F',
+                  marginTop: '-10px',
+                  marginLeft: '20px'
+                }}>
+                  Web Studios
+                </span>
+              </div>
+            </div>
           </Link>
 
           {/* Right Section: Socials + Hamburger */}
@@ -50,14 +93,14 @@ const App = () => {
             </div>
 
             {/* Hamburger */}
-            <button 
-              onClick={() => setMenuOpen(!menuOpen)} 
-              style={{ 
-                background: 'none', 
-                border: 'none', 
-                cursor: 'pointer', 
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
                 color: '#000',
-                WebkitTapHighlightColor: 'transparent' 
+                WebkitTapHighlightColor: 'transparent'
               }}>
               <FaBars size={20} />
             </button>
