@@ -66,20 +66,19 @@ const App = () => {
                 flexDirection: 'column',
                 position: 'relative',
                 right: '15px',
-                marginBottom: '-4px',
+                marginBottom: 'px',
                 opacity: logoHovered ? 1 : 0,
                 transform: logoHovered ? 'translateX(0)' : 'translateX(-10px)',
                 transition: 'opacity 0.3s ease, transform 0.3s ease'
               }}>
-                <span style={{ fontSize: '40px', fontWeight: '800', color: '#0F0F0F' }}>
+                <span style={{ fontSize: '36px', fontWeight: '800', color: '#0F0F0F', marginLeft: '2px', marginBottom: '6px' }}>
                   estive<span style={{ color: '#8B5CF6' }}>.</span>
                 </span>
                 <span style={{
                   position: 'absolute',
-                  top: '36px',
+                  top: '32px',
                   right: '4px',
                   fontSize: '16px',
-                  fontWeight: 'bolder',
                   fontFamily: `'Caveat', cursive`,
                   color: '#0F0F0F'
                 }}>

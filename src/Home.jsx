@@ -75,9 +75,9 @@ const Home = () => {
           />
 
           {/* estive. and Web Studios text block */}
-          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', right: '15px', marginBottom: '-4px' }}>
+          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', right: '15px', marginBottom: '6px' }}>
             <span style={{
-              fontSize: '40px',
+              fontSize: '36px',
               fontWeight: 800,
               color: '#0F0F0F',
               opacity: showEstive ? 1 : 0,
@@ -91,10 +91,9 @@ const Home = () => {
             {/* Web Studios appears below the name */}
             <span style={{
               position: 'absolute',
-              top: '36px',
+              top: '32px',
               right: '6px',
               fontSize: '16px',
-              fontWeight: 'bolder',
               fontFamily: `'Caveat', cursive`,
               color: '#0F0F0F',
               opacity: showWebStudios ? 1 : 0,
