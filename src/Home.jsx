@@ -2,21 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  // Controls animation for "N" icon
   const [showN, setShowN] = useState(false);
+  // Controls animation for "estive"
   const [showEstive, setShowEstive] = useState(false);
+  // Controls animation for "Web Studios"
   const [showWebStudios, setShowWebStudios] = useState(false);
+  // Tracks which words are visible in the animated headline
   const [visibleWords, setVisibleWords] = useState([]);
 
+  // Words to animate for the main tagline
   const topLine = ['Websites', 'that'];
   const bottomLine = ['Work.', 'Fast.'];
 
+  // Animate logo and words with staggered timing
   useEffect(() => {
     const timers = [];
 
+    // Show each part of the logo with delays
     timers.push(setTimeout(() => setShowN(true), 100));
     timers.push(setTimeout(() => setShowEstive(true), 900));
     timers.push(setTimeout(() => setShowWebStudios(true), 1300));
 
+    // Show headline words one by one with increasing delay
     [...topLine, ...bottomLine].forEach((word, i) => {
       const delay = 1700 + i * 350 + (word === 'Fast.' ? 400 : 0);
       timers.push(setTimeout(() => {
@@ -24,9 +32,11 @@ const Home = () => {
       }, delay));
     });
 
+    // Clean up timeouts when component unmounts
     return () => timers.forEach(clearTimeout);
   }, []);
 
+  // Return dynamic styles based on which words are visible
   const fadeStyle = (word) => ({
     opacity: visibleWords.includes(word) ? 1 : 0,
     transition: 'opacity 1s ease-out',
@@ -37,7 +47,7 @@ const Home = () => {
   return (
     <div style={{
       width: '100%',
-      minHeight: 'calc(100vh - 240px)',
+      minHeight: 'calc(100vh - 240px)', // Leaves space for header/footer
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -47,7 +57,7 @@ const Home = () => {
       backgroundColor: '#fff',
     }}>
 
-      {/* Animated Nestive Logo */}
+      {/* Animated Logo Section */}
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img
@@ -63,6 +73,8 @@ const Home = () => {
               transitionDelay: '0.1s',
             }}
           />
+
+          {/* estive. and Web Studios text block */}
           <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', right: '15px', marginBottom: '-4px' }}>
             <span style={{
               fontSize: '40px',
@@ -76,13 +88,13 @@ const Home = () => {
               estive<span style={{ color: '#8B5CF6', right: '1px' }}>.</span>
             </span>
 
-            {/* Web Studios aligned under right side */}
+            {/* Web Studios appears below the name */}
             <span style={{
               position: 'absolute',
               top: '36px',
-              
-              right: '2px',
+              right: '6px',
               fontSize: '16px',
+              fontWeight: 'bolder',
               fontFamily: `'Caveat', cursive`,
               color: '#0F0F0F',
               opacity: showWebStudios ? 1 : 0,
@@ -95,7 +107,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Headline */}
+      {/* Animated Tagline */}
       <div style={{ marginBottom: '20px', fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.1 }}>
         <div>
           {topLine.map((word, i) => (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Footer from './Footer';
@@ -7,18 +7,31 @@ import { FaBars } from 'react-icons/fa';
 import { FaRedditAlien, FaInstagram, FaXTwitter, FaTiktok } from 'react-icons/fa6';
 
 const App = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [logoHovered, setLogoHovered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // Controls dropdown menu visibility
+  const [logoHovered, setLogoHovered] = useState(false); // Controls hover animation of logo
+  const menuRef = useRef(null); // Ref for detecting clicks outside of menu
+
+  // Closes the dropdown menu when you click anywhere outside it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <Router>
       <div style={{
-        display: 'flex',
+        display: 'flex', // Main layout is flex column
         flexDirection: 'column',
-        minHeight: '100vh',
+        minHeight: '100vh', // Full viewport height
         backgroundColor: '#fff'
       }}>
-        {/* Navbar */}
+
+        {/* NAVIGATION BAR */}
         <nav style={{
           backgroundColor: '#fff',
           borderBottom: '1px solid #ddd',
@@ -27,6 +40,8 @@ const App = () => {
           alignItems: 'center',
           position: 'relative'
         }}>
+
+          {/* LOGO SECTION */}
           <Link
             to="/"
             style={{
@@ -40,33 +55,33 @@ const App = () => {
             onMouseEnter={() => setLogoHovered(true)}
             onMouseLeave={() => setLogoHovered(false)}
           >
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-              {/* N icon */}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
               <img
                 src="/nestive-favicon-large.png"
                 alt="Nestive N Logo"
-                style={{ height: '80px', transition: 'transform 0.3s ease-in-out' }}
+                style={{ height: '72px', transition: 'transform 0.3s ease-in-out' }}
               />
-
-              {/* Hover-reveal text */}
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
-                marginLeft: '-4px',
-                marginBottom: '-24px',
+                position: 'relative',
+                right: '15px',
+                marginBottom: '-4px',
                 opacity: logoHovered ? 1 : 0,
-                transform: logoHovered ? 'translateX(-10px)' : 'translateX(-20px)',
+                transform: logoHovered ? 'translateX(0)' : 'translateX(-10px)',
                 transition: 'opacity 0.3s ease, transform 0.3s ease'
               }}>
-                <span style={{ fontSize: '28px', fontWeight: '800', color: '#0F0F0F' }}>
+                <span style={{ fontSize: '40px', fontWeight: '800', color: '#0F0F0F' }}>
                   estive<span style={{ color: '#8B5CF6' }}>.</span>
                 </span>
                 <span style={{
-                  fontSize: '14px',
+                  position: 'absolute',
+                  top: '36px',
+                  right: '4px',
+                  fontSize: '16px',
+                  fontWeight: 'bolder',
                   fontFamily: `'Caveat', cursive`,
-                  color: '#0F0F0F',
-                  marginTop: '-10px',
-                  marginLeft: '10px'
+                  color: '#0F0F0F'
                 }}>
                   Web Studios
                 </span>
@@ -74,58 +89,103 @@ const App = () => {
             </div>
           </Link>
 
-          {/* Right Section: Socials + Hamburger */}
+          {/* SOCIAL ICONS + HAMBURGER BUTTON */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div className="social-icons" style={{ display: 'flex', gap: '12px', marginRight: '12px' }}>
-              <a href="https://www.tiktok.com/@nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-                <FaTiktok size={20} />
-              </a>
-              <a href="https://x.com/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-                <FaXTwitter size={20} />
-              </a>
-              <a href="https://www.reddit.com/user/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-                <FaRedditAlien size={20} />
-              </a>
-              <a href="https://instagram.com/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-                <FaInstagram size={20} />
-              </a>
+              {[
+                { href: "https://www.tiktok.com/@nestiveweb", icon: <FaTiktok size={20} /> },
+                { href: "https://x.com/nestiveweb", icon: <FaXTwitter size={20} /> },
+                { href: "https://www.reddit.com/user/nestiveweb", icon: <FaRedditAlien size={20} /> },
+                { href: "https://instagram.com/nestiveweb", icon: <FaInstagram size={20} /> },
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#000' }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#8B5CF6'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#000'}
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
 
+            {/* MENU BUTTON (hamburger) */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
+              onMouseEnter={() => setMenuOpen(true)}
               style={{
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
                 color: '#000',
                 WebkitTapHighlightColor: 'transparent'
-              }}>
+              }}
+              onMouseOver={e => e.currentTarget.style.color = '#8B5CF6'}
+              onMouseOut={e => e.currentTarget.style.color = '#000'}
+            >
               <FaBars size={20} />
             </button>
           </div>
 
+          {/* DROPDOWN MENU CONTENT */}
           {menuOpen && (
-            <div style={{
-              position: 'absolute',
-              top: '60px',
-              right: '24px',
-              backgroundColor: '#fff',
-              border: '1px solid #ddd',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-              padding: '10px 20px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '10px',
-              zIndex: 10
-            }}>
-              <Link to="/" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: '#0F0F0F', fontWeight: 'bold' }}>Home</Link>
-              <Link to="/free-preview" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: '#0F0F0F', fontWeight: 'bold' }}>Free Preview</Link>
-              <a href="mailto:support@nestiveweb.com" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: '#0F0F0F', fontWeight: 'bold' }}>Contact</a>
+            <div
+              ref={menuRef}
+              style={{
+                position: 'absolute',
+                top: '60px',
+                right: '24px',
+                backgroundColor: '#fff',
+                border: '1px solid #ddd',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                padding: '10px 20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px',
+                zIndex: 10
+              }}
+            >
+              {[{
+                label: 'Home', to: '/'
+              }, {
+                label: 'Free Preview', to: '/free-preview'
+              }].map((link, i) => (
+                <Link
+                  key={i}
+                  to={link.to}
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    textDecoration: 'none',
+                    color: '#0F0F0F',
+                    fontWeight: 'bold'
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#8B5CF6'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#0F0F0F'}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href="mailto:support@nestiveweb.com"
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  textDecoration: 'none',
+                  color: '#0F0F0F',
+                  fontWeight: 'bold'
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = '#8B5CF6'}
+                onMouseLeave={e => e.currentTarget.style.color = '#0F0F0F'}
+              >
+                Contact
+              </a>
             </div>
           )}
         </nav>
 
-        {/* Content */}
+        {/* PAGE CONTENT */}
         <div style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -133,10 +193,11 @@ const App = () => {
           </Routes>
         </div>
 
+        {/* FOOTER */}
         <Footer />
       </div>
 
-      {/* Hide socials on mobile */}
+      {/* MEDIA QUERY: Hide social icons on mobile */}
       <style>{`
         @media (max-width: 640px) {
           .social-icons {
