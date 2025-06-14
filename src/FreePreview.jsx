@@ -4,22 +4,15 @@ const FreePreview = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 100);
+    const timer = setTimeout(() => setLoaded(true), 200); // slightly delayed load
     return () => clearTimeout(timer);
   }, []);
 
   const fadeIn = (delay = 0) => ({
     opacity: loaded ? 1 : 0,
-    transform: loaded ? 'translateY(0)' : 'translateY(20px)',
-    transition: `opacity 0.6s ease-out ${delay}ms, transform 0.6s ease-out ${delay}ms`
+    transform: loaded ? 'translateY(0)' : 'translateY(30px)',
+    transition: `opacity 0.9s ease-in-out ${delay}ms, transform 0.9s ease-in-out ${delay}ms`
   });
-
-  const bounceHover = {
-    transition: 'transform 0.2s ease',
-    ':hover': {
-      transform: 'scale(1.05) translateY(-2px)'
-    }
-  };
 
   return (
     <div style={{
@@ -45,7 +38,7 @@ const FreePreview = () => {
         marginBottom: '20px',
         color: '#0F0F0F',
         fontWeight: 500,
-        ...fadeIn(200)
+        ...fadeIn(400)
       }}>
         Fill out our quick form, and we’ll send you a working preview of your future website in <span style={{ color: '#8B5CF6' }}>24–48 hours</span>.
       </p>
@@ -56,7 +49,7 @@ const FreePreview = () => {
         marginBottom: '40px',
         color: '#0F0F0F',
         fontWeight: 500,
-        ...fadeIn(400)
+        ...fadeIn(800)
       }}>
         If you’re happy, you’ll get a unique payment link to unlock your full site + ongoing support.
       </p>
@@ -75,8 +68,9 @@ const FreePreview = () => {
           padding: '14px 26px',
           borderRadius: '6px',
           textDecoration: 'none',
-          transition: 'transform 0.2s ease',
-          transform: loaded ? 'scale(1)' : 'scale(0.95)'
+          transition: 'transform 0.2s ease, opacity 0.9s ease-in-out 1200ms',
+          transform: loaded ? 'scale(1)' : 'scale(0.95)',
+          opacity: loaded ? 1 : 0
         }}
         onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'}
         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}

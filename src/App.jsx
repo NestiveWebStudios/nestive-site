@@ -4,7 +4,7 @@ import Home from './Home';
 import Footer from './Footer';
 import FreePreview from './FreePreview';
 import { FaBars } from 'react-icons/fa';
-import { FaRedditAlien, FaInstagram, FaXTwitter } from 'react-icons/fa6';
+import { FaRedditAlien, FaInstagram, FaXTwitter, FaTiktok } from 'react-icons/fa6';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,27 +28,40 @@ const App = () => {
           position: 'relative'
         }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <img src="/nestive-icon.png" alt="Nestive Logo" style={{ height: '30px' }} />
-            <span style={{ fontWeight: '700', fontSize: '1rem', color: '#000' }}>NESTIVE</span>
+            <img src="/nestive-transparent-logo.png" alt="Nestive Logo" style={{ height: '80px' }} />
           </Link>
 
-          {/* Social Icons */}
+          {/* Right Section: Socials + Hamburger */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <a href="https://x.com/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-              <FaXTwitter size={20} />
-            </a>
-            <a href="https://www.reddit.com/user/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-              <FaRedditAlien size={20} />
-            </a>
-            <a href="https://instagram.com/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
-              <FaInstagram size={20} />
-            </a>
-          </div>
+            {/* Social Icons */}
+            <div className="social-icons" style={{ display: 'flex', gap: '12px', marginRight: '12px' }}>
+              <a href="https://www.tiktok.com/@nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
+                <FaTiktok size={20} />
+              </a>
+              <a href="https://x.com/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
+                <FaXTwitter size={20} />
+              </a>
+              <a href="https://www.reddit.com/user/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
+                <FaRedditAlien size={20} />
+              </a>
+              <a href="https://instagram.com/nestiveweb" target="_blank" rel="noopener noreferrer" style={{ color: '#000' }}>
+                <FaInstagram size={20} />
+              </a>
+            </div>
 
-          {/* Hamburger */}
-          <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-            <FaBars size={20} />
-          </button>
+            {/* Hamburger */}
+            <button 
+              onClick={() => setMenuOpen(!menuOpen)} 
+              style={{ 
+                background: 'none', 
+                border: 'none', 
+                cursor: 'pointer', 
+                color: '#000',
+                WebkitTapHighlightColor: 'transparent' 
+              }}>
+              <FaBars size={20} />
+            </button>
+          </div>
 
           {menuOpen && (
             <div style={{
@@ -61,7 +74,8 @@ const App = () => {
               padding: '10px 20px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '10px'
+              gap: '10px',
+              zIndex: 10
             }}>
               <Link to="/" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: '#0F0F0F', fontWeight: 'bold' }}>Home</Link>
               <Link to="/free-preview" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: '#0F0F0F', fontWeight: 'bold' }}>Free Preview</Link>
@@ -81,6 +95,15 @@ const App = () => {
         {/* Footer */}
         <Footer />
       </div>
+
+      {/* CSS for hiding social icons on small screens */}
+      <style>{`
+        @media (max-width: 640px) {
+          .social-icons {
+            display: none;
+          }
+        }
+      `}</style>
     </Router>
   );
 };

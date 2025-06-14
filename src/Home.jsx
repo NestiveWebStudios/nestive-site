@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const [showLogo, setShowLogo] = useState(false);
+  const [showN, setShowN] = useState(false);
+  const [showEstive, setShowEstive] = useState(false);
   const [visibleWords, setVisibleWords] = useState([]);
 
   const topLine = ['Websites', 'that'];
@@ -11,10 +12,11 @@ const Home = () => {
   useEffect(() => {
     const timers = [];
 
-    timers.push(setTimeout(() => setShowLogo(true), 100));
+    timers.push(setTimeout(() => setShowN(true), 100));
+    timers.push(setTimeout(() => setShowEstive(true), 900)); // estive appears after N lands
 
     [...topLine, ...bottomLine].forEach((word, i) => {
-      const delay = 800 + i * 350 + (word === 'Fast.' ? 400 : 0);
+      const delay = 1300 + i * 350 + (word === 'Fast.' ? 400 : 0);
       timers.push(setTimeout(() => {
         setVisibleWords(prev => [...prev, word]);
       }, delay));
@@ -37,28 +39,42 @@ const Home = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      padding: '40px 20px 60px',
+      justifyContent: 'start',
+      padding: '60px 20px 40px',
       textAlign: 'center',
       backgroundColor: '#fff',
     }}>
-      {/* N Logo */}
-      <img
-        src="/nestive-icon-large.png"
-        alt="Nestive Logo"
-        style={{
-          marginTop: '-200px',
-          width: '84px',
-          height: '84px',
-          marginBottom: '20px',
-          opacity: showLogo ? 1 : 0,
-          transform: showLogo ? 'translateY(0)' : 'translateY(-30px)',
-          transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-        }}
-      />
 
-      {/* Animated headline */}
-      <div style={{ marginBottom: '20px', fontSize: '3rem', fontWeight: 900, lineHeight: 1.2 }}>
+      {/* Animated Nestive Logo */}
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px', height: '84px' }}>
+        <img
+          src="/nestive-favicon-large.png"
+          alt="N icon"
+          style={{
+            width: '84px',
+            height: '84px',
+            transform: showN ? 'translateY(0)' : 'translateY(-30px)',
+            opacity: showN ? 1 : 0,
+            transition: 'transform 0.6s ease-out, opacity 0.6s ease-out',
+            marginRight: showEstive ? '2px' : '0',
+            transitionDelay: '0.1s',
+          }}
+        />
+        <span style={{
+          fontSize: '48px',
+          fontWeight: 800,
+          color: '#0F0F0F',
+          opacity: showEstive ? 1 : 0,
+          transform: showEstive ? 'translateX(0)' : 'translateX(-4px)',
+          transition: 'opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s',
+          paddingBottom: '2px'
+        }}>
+          estive<span style={{ color: '#8B5CF6' }}>.</span>
+        </span>
+      </div>
+
+      {/* Headline */}
+      <div style={{ marginBottom: '30px', fontSize: '3rem', fontWeight: 900, lineHeight: 1.2 }}>
         <div>
           {topLine.map((word, i) => (
             <span key={i} style={fadeStyle(word)}>{word}</span>
@@ -83,7 +99,6 @@ const Home = () => {
           padding: '14px 26px',
           borderRadius: '6px',
           textDecoration: 'none',
-          marginTop: '10px',
           transition: 'transform 0.2s ease'
         }}
         onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'}
