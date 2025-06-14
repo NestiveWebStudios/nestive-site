@@ -35,24 +35,24 @@ const Home = () => {
   return (
     <div style={{
       width: '100%',
-      minHeight: 'calc(100vh - 80px)',
+      minHeight: 'calc(100vh - 240px)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'start',
-      padding: '60px 20px 40px',
+      justifyContent: 'center',
+      padding: '10px 10px 20px',
       textAlign: 'center',
       backgroundColor: '#fff',
     }}>
 
       {/* Animated Nestive Logo */}
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px', height: '84px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px', height: '72px' }}>
         <img
           src="/nestive-favicon-large.png"
           alt="N icon"
           style={{
-            width: '84px',
-            height: '84px',
+            width: '72px',
+            height: '72px',
             transform: showN ? 'translateY(0)' : 'translateY(-30px)',
             opacity: showN ? 1 : 0,
             transition: 'transform 0.6s ease-out, opacity 0.6s ease-out',
@@ -61,7 +61,7 @@ const Home = () => {
           }}
         />
         <span style={{
-          fontSize: '48px',
+          fontSize: '40px',
           fontWeight: 800,
           color: '#0F0F0F',
           opacity: showEstive ? 1 : 0,
@@ -74,7 +74,7 @@ const Home = () => {
       </div>
 
       {/* Headline */}
-      <div style={{ marginBottom: '30px', fontSize: '3rem', fontWeight: 900, lineHeight: 1.2 }}>
+      <div style={{ marginBottom: '20px', fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.1 }}>
         <div>
           {topLine.map((word, i) => (
             <span key={i} style={fadeStyle(word)}>{word}</span>
@@ -96,7 +96,7 @@ const Home = () => {
           color: '#fff',
           fontWeight: 'bold',
           fontSize: '16px',
-          padding: '14px 26px',
+          padding: '12px 22px',
           borderRadius: '6px',
           textDecoration: 'none',
           transition: 'transform 0.2s ease'
