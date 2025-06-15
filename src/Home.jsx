@@ -94,8 +94,9 @@ const Home = () => {
               top: '32px',
               right: '6px',
               fontSize: '16px',
+              fontWeight: 600,
               fontFamily: `'Caveat', cursive`,
-              color: '#0F0F0F',
+              color: '#8B5CF6',
               opacity: showWebStudios ? 1 : 0,
               transform: showWebStudios ? 'translateY(0)' : 'translateY(-10px)',
               transition: 'all 0.6s ease-out'

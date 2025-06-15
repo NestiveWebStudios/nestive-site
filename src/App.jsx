@@ -79,8 +79,9 @@ const App = () => {
                   top: '32px',
                   right: '4px',
                   fontSize: '16px',
+                  fontWeight: 600,
                   fontFamily: `'Caveat', cursive`,
-                  color: '#0F0F0F'
+                  color: '#8B5CF6'
                 }}>
                   Web Studios
                 </span>
